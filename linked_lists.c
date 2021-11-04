@@ -11,17 +11,17 @@ size_t print_list(const list_t *h)
 
 	while (h != NULL)
 	{
-		if (h->str)
-		{
-			_puts(num_to_str(h->len));
-			_puts(" ");
-			_puts(h->str);
-			_puts("\n");
-		}
-		else
-			_puts("[0] (nil)\n");
-		h = h->next;
-		number_nodes++;
+	if (h->str)
+	{
+	_puts(num_to_str(h->len));
+	_puts(" ");
+	_puts(h->str);
+	_puts("\n");
+	}
+	else
+	_puts("[0] (nil)\n");
+	h = h->next;
+	number_nodes++;
 	}
 	return (number_nodes);
 }
@@ -39,7 +39,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	end_node = malloc(sizeof(list_t));
 
 	if (end_node == NULL)
-		return (NULL);
+	return (NULL);
 
 	end_node->str = _strdup(str);
 	end_node->len = _strlen(str);
@@ -47,12 +47,12 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	if (*head == NULL)
 	{
-		*head = end_node;
-		return (*head);
+	*head = end_node;
+	return (*head);
 	}
 	tmp = *head;
 	while (tmp->next != NULL)
-		tmp = tmp->next;
+	tmp = tmp->next;
 	tmp->next = end_node;
 	return (end_node);
 
